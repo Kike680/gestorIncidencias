@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IncidenciasController!{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    Crear/Editar Incidencia
+                </div>
+                <div class="card-body">
+                    {{ form_start(formularioIncidencia, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+                    <div class="mb-3">
+                        {{ form_row(formularioIncidencia.titulo, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(formularioIncidencia.estado, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="text-center">
+                        
+                    </div>
+                    {{ form_end(formularioIncidencia) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

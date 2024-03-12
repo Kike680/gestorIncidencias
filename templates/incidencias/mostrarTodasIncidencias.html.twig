@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container mt-4">
+    <h2>TODAS LAS INCIDENCIAS/h2>
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Fecha Creación</th>    
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for incidencia in incidencias %}
+            <tr>
+                <td>{{ incidencia.id }}</td>
+                <td>{{ incidencia.titulo }}</td>
+                <td>{{ incidencia.fechaCreacion|date('Y-m-d H:i:s') }}</td>
+                <td>{{ incidencia.estado }}</td>
+          
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   
+    <a href="{{ path('app_cliente') }}" class="btn btn-secondary">Volver a los Clientes</a>
+    
+</div>
+
+{% endblock %}
